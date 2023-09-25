@@ -1,63 +1,56 @@
 #include "Game.h"
 
-void Game::InitVariable()
-{
-
-	// nullptr : 주소값이 없는 상태 -> 아무것도 가리키지 않는 상태
-	this->Window = nullptr;
-
-}
-
-void Game::InitWindow()
-{
-	this->VMode.width = 1024;
-	this->VMode.height = 768;
-
-	this->Window = new sf::RenderWindow(this->VMode, "Simple Game", sf::Style::Titlebar | sf::Style::Close);
-
-}
-
 Game::Game()
 {
-
-	this->InitVariable();
+	this->InitWindowPointer();
 	this->InitWindow();
-
 }
 
 Game::~Game()
 {
+	this->DeleteWindow();
 }
 
-const bool Game::IsCreate()
+void Game::InitWindowPointer()
+{
+	this->Window = nullptr;
+}
+
+void Game::InitWindow()
+{
+	//int* a = new int(3);
+	this->Window = new RenderWindow(VideoMode(1024, 768), "Simple Game", Style::Titlebar | Style::Close);
+}
+
+void Game::DeleteWindow()
+{
+	delete this->Window;
+}
+
+const bool Game::Running() const
 {
 	return this->Window->isOpen();
 }
 
-void Game::ExecEvent()
+void Game::EventHandler()
 {
-    while (this->Window->pollEvent(this->Event))
-    {
-        switch (this->Event.type)
-        {
-        case sf::Event::Closed:
-            this->Window->close();
-            break;
-        case sf::Event::KeyPressed:
-            if (Event.key.code == sf::Keyboard::Escape)
-            {
-                this->Window->close();
-            }
-            break;
-        }
-
-    }
+	while (this->Window->pollEvent(e))
+	{
+		switch (e.type)
+		{
+		case Event::Closed:
+			this->Window->close();
+			break;
+		}
+	}
 }
 
 void Game::Update()
 {
+
 }
 
 void Game::Render()
 {
+
 }

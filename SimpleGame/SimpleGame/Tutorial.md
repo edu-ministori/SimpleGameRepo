@@ -43,7 +43,7 @@ https://www.sfml-dev.org/download/sfml/2.6.0/
 
 ```
   sfml-system.lib
-  sfml-graphic.lib
+  sfml-graphics.lib
   sfml-window.lib
   sfml-audio.lib
   sfml-network.lib
@@ -54,7 +54,7 @@ https://www.sfml-dev.org/download/sfml/2.6.0/
 
 ```
   sfml-system-d.lib
-  sfml-graphic-d.lib
+  sfml-graphics-d.lib
   sfml-window-d.lib
   sfml-audio-d.lib
   sfml-network-d.lib
@@ -76,3 +76,13 @@ https://www.sfml-dev.org/download/sfml/2.6.0/
 - Event Delegate : 여러개의 이벤트에 대응
 - Event Listening : 이벤트 감지
 - Event Handle : 감지된 이벤트에 대해서 적절한 동작
+
+
+# Game Loop
+
+# SimpleGame 프로젝트에 구현한 Game 클래스
+
+- 게임을 전반적으로 Control하는 클래스
+- Enemy 생성
+- Player 생성
+
