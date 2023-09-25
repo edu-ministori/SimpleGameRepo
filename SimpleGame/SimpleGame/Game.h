@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
@@ -33,6 +34,28 @@ private:
 	* Enemy
 	*/
 	RectangleShape RectEnemy;
+	vector<RectangleShape> RectEnemies;
+
+	// Spawn Value
+	float EnemySpawnTime;
+	float EnemySpawnTimeMax;
+	int EnemyMaxNumber;
+
+	// Set Spawn Value 
+	void SetSpawnValue();
+
+	// Init RectEnemy
+	void InitRectEnemy();
+
+	/*
+	* Player
+	*/
+
+	CircleShape Player;
+
+	// Init Player
+	void InitPlayer();
+	
 
 public:
 	/*
@@ -44,8 +67,25 @@ public:
 	/*
 	* Enenmy
 	*/
+	
+	// Spawn Enemy
+	void SpawnEnemy();
 
+	void UpdateEnemy();
 
+	/*
+	* Player
+	*/
+
+	void UpdatePlayer();
+
+	/*
+	* Collision
+	*/
+
+	void UpdateCollision();
+
+	void GameOver();
 
 	/*
 	* Game Loop

@@ -2,12 +2,15 @@
 //
 
 #include <iostream>
+#include <ctime>
 
 //#include "SimpleGame.h"
 #include "Game.h"
 
 int main()
 {
+    srand(time(NULL));
+    
     Game SimpleGame;
 
     // Game Loop
