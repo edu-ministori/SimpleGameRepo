@@ -8,15 +8,4 @@
 int main()
 {
     
-    Game Simple;
-
-    while (Simple.IsCreate()) {
-
-        //Window.clear(sf::Color(100,100,100,255));
-        //Window.clear(sf::Color::Magenta);
-
-        //Window.display();
-
-    }
-
 }
